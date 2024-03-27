@@ -1,0 +1,512 @@
+@font-face {
+	font-family: Arial,'Lato', sans-serif;
+	src: url(../fonts/Lato-BoldItalic.woff2) format('woff2'); src: url(../fonts/Lato-BoldItalic.woff) format ('woff');
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+}
+@font-face {
+	font-family: Arial,'Lato', serif;
+	src: url(../fonts/Lato-Medium.woff2) format('woff2'); src: url(../fonts/Lato-Medium.woff)format('woff');
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}	
+@font-face {
+	font-family: Arial,'Lato', serif;
+	src: url(../fonts/Lato-Regular.woff2) format('woff2');src: url(../fonts/Lato-Regular.woff) format('woff');
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+body{
+	background-image: url(../img/fon.jpg);
+	background-size: 170%;
+	background-repeat: no-repeat;
+}
+.wraper {
+	position: relative;
+	overflow: hidden;
+	min-height: 100%;
+}
+.main {
+	padding-top: 50px;
+}
+.main__container {
+	max-width: 1600px;
+	min-height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.main__indication{
+	position: relative;
+	width: 820px;
+	height: 400px;
+	background-color: green;
+	padding: 60px;
+	text-align: center;
+	transform: translate(-120px, 260px);
+	perspective:400px;
+	}
+h1 {
+	font-size: 100px;
+	font-weight: 700;
+	font-style: italic;
+	padding-bottom: 30px;
+	text-decoration: underline;
+	transform: rotate3d(1 1 1 45deg);
+}
+p {
+	font-size: 80px;
+	color: orangered;
+	line-height: 0.8;
+}
+.main__open{
+	display: block;
+	color: green;
+	width: 2000px;
+}
+.main__door{
+	position: relative;
+	width: 840px;
+	height: 920px;
+	/* background-color: #6c88e6; */
+	transform: translate(-140px, -280px);
+	z-index: 2;
+}
+.main__button{
+	width: 175px;
+	height: 100px;
+	background-color:rgb(247, 7, 7);
+	border-radius: 40% 40%;
+	position: absolute;
+	left: 475px;
+	top: 670px;
+	z-index: 2;
+	border: 10px solid black; 
+}
+.main__button > p{
+	color: #000;
+	font-size: 75px;
+}
+.main__open:hover .main__button{
+	opacity: 0;
+}
+/* .main__open:hover .main__door{
+	perspective:400px;
+} */
+/* не работает на дверях перспектива в разных вариантах */
+.transform-skill{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 410px;
+	height: 820px;
+	background-color: #fff;
+	border: 10px solid green;
+	border-right: 5px solid green;
+}
+.transform-skill__scale{
+	width: 410px;
+	height: 820px;
+	background-color: orangered;
+	border: 40px solid rgb(248, 219, 53);
+	outline: 80px solid rgb(248, 219, 53); 
+	transform: scale(0.5);
+	/* почему этот блок на том же месте что и родитель transform-skill а другие дети каждый порядок ниже? 
+	разное расстояниемежду жёлтым и белым??*/
+}
+.transform-skill--right{
+	/* border: 10px solid green;
+	border-left: 5px solid green; */
+	transform: translate(429px,0px)rotate(180deg);
+}
+.transform-skill--left{
+	transform: translate(20px,0px);
+}
+.transform-skill__scale-1{
+	position: absolute;
+	width: 40px;
+	height: 140px;
+	background-color:  green;
+	transform: skew(10deg, 70deg)rotate(-20deg);
+	left: 180px;
+	bottom: 320px; 
+	z-index: 2;
+	
+}
+.transform-skill__scale-1--right{
+	background-color:green;
+	transform: skew(-10deg, -70deg)rotate(20deg);
+}
+.main__open:hover .transform-skill--right{
+	transform: translateX(850px) rotate(180deg);
+	transition: all 1s ease 0s;
+	/* какая-то петрушка с переворотом при Хавере, пришлось продублировать rotate(180deg)  */
+}
+.main__open:hover .transform-skill--left{
+	transform: translateX(-400px);
+	transition: all 1.5s ease 1s;
+}
+/* position: absolute;
+	left: 400px; второй варианткак передвинуть блок*/
+.main__chess-board{
+	width: 820px;
+	height: 820px;
+	background-color: orangered;
+	padding: 50px;
+}
+.board{
+	position: relative;
+	transform: translate(1160px, -1200px);
+}
+.board__square {
+	width: 720px;
+	height: 720px;
+	background-color: green;
+}
+.square__white {
+	width: 90px;
+	height: 90px;
+	background-color: rgb(248, 219, 53);
+}
+.square__white--1 {
+	transform: translate(90px, 0px);
+}
+.square__white--3 {
+	transform: translate(90px, 0px);
+}
+.square__white--5 {
+	transform: translate(90px, 0px);
+}
+.square__white--7 {
+	transform: translate(90px, 0px);
+}
+.square__white--8 {
+	transform: translate(180px, -180px);
+}
+.square__white--9 {
+	transform: translate(180px, -450px);
+}
+.square__white--10 {
+	transform: translate(180px, -720px);
+}
+.square__white--11 {
+	transform: translate(180px, -990px);
+}
+.square__white--12 {
+	transform: translate(270px, -450px);
+}
+.square__white--13 {
+	transform: translate(270px, -720px);
+}
+.square__white--14 {
+	transform: translate(270px, -990px);
+}
+.square__white--15 {
+	transform: translate(270px, -1260px);
+}
+.square__white--16 {
+	transform: translate(360px, -900px);
+}
+.square__white--17 {
+	transform: translate(360px, -1170px);
+}
+.square__white--18 {
+	transform: translate(360px, -1440px);
+}
+.square__white--19 {
+	transform: translate(360px, -1710px);
+	background-image: url(../img/horse.svg);
+	background-size: 150%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.square__white--20 {
+	transform: translate(450px, -1170px);
+}
+.square__white--21 {
+	transform: translate(450px, -1440px);
+}
+.square__white--22 {
+	transform: translate(450px, -1710px);
+}
+.square__white--23 {
+	transform: translate(450px, -1980px);
+}
+.square__white--24 {
+	transform: translate(540px, -1620px);
+}
+.square__white--25 {
+	transform: translate(540px, -1890px);
+}
+.square__white--26 {
+	transform: translate(540px, -2160px);
+}
+.square__white--27 {
+	transform: translate(540px, -2430px);
+	background-image: url(../img/horse.svg);
+	background-size: 150%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.square__white--28 {
+	transform: translate(630px, -2430px);
+}
+.square__white--29 {
+	transform: translate(630px, -1980px);
+}
+.square__white--30 {
+	transform: translate(630px, -2250px);
+}
+.square__white--31 {
+	transform: translate(630px, -2520px);
+}
+.square__white--32{
+	transform: translate(630px, -2340px);
+	background-color: green;
+	background-image: url(../img/kingbl.svg);
+	background-size: 70% 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.square__white--33{
+	transform: translate(540px, -2700px);
+	background-color: green;
+	background-size: 150%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../img/pawn.svg);
+}
+.start__white-king{
+	width: 90px;
+	height: 90px;
+	transform: translate(360px, -3076px);
+	background-image: url(../img/eelefant.svg);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgb(248, 219, 53);
+}
+.start__white-trasform{
+	left: 40px;
+	bottom: 50px;
+}
+.start__white-trasform:active .start__white-king {
+	transform: translate(450px, -2986px);
+	background-color: red;
+}
+.start__square-red{
+	width: 90px;
+	height: 90px;
+	background-color: rgb(248, 219, 53); 
+	transform: translate(540px, -3166px);
+}
+.start__square-red--king{
+	background-color: rgb(248, 219, 53); 
+	transform: translate(630px, -3346px);
+	background-size: 120%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../img/white-king.png);
+}
+.start__white-trasform:active .start__square-red{
+	background-color: red;
+}
+.start__white-trasform:active .start__square-red--king{
+	background-size: 0%;
+	/* background-repeat: repeat; */
+}
+.start__white-trasform--2{
+	background-color: green; 
+	transform: translate(630px, -3165px);
+}
+.elephant{
+	width: 90px;
+	height:90px;
+	background-color:green; 
+	left: 140px;
+	bottom: 320px;
+	position: absolute;
+	z-index: 1;
+}
+.elephant__body-1 {
+	width: 15px;
+	height:30px;
+	background-color:white;
+	transform: translate(35px, 30px);
+	border-radius: 20px 20px 15px 15px;
+	outline: 1px solid black;
+}
+.elephant__top {
+	width: 20px;
+	height:20px;
+	background-color:white;
+	transform: translate(32px, 20px);
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	outline: 1px solid rgba(0, 0, 0, 0.76);
+}
+.elephant__top-1{
+	width: 17px;
+	height:4px;
+	background-color:white;
+	transform: translate(34px, -21px);
+	border-radius: 20px;
+	outline: 1px solid rgba(0, 0, 0, 0.76);
+}
+.elephant__top-2{
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 23px solid white;
+	transform: translate(32px, -68px);
+}
+.elephant__top-3{
+	width: 6px;
+	height:6px;
+	background-color:white;
+	border-radius: 50% 50%;
+	transform: translate(39px, -93px);
+	outline: 1px solid rgba(0, 0, 0, 0.76);
+}
+.elephant__bottom {
+	width: 30px;
+	height:15px;
+	background-color:white;
+	transform: translate(28px, 15px);
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	outline: 1px solid rgba(0, 0, 0, 0.76);
+}
+.elephant__bottom-1{
+	width: 37px;
+	height:6px;
+	background-color:white;
+	transform: translate(25px, 10px);
+	outline: 1px solid rgba(0, 0, 0, 0.76);
+}
+.elephant__top-4{
+	width: 1px;
+	height:20px;
+	background-color:rgba(0, 0, 0, 0.575);
+	transform: translate(48px, -113.5px)rotate(156deg);
+}
+.elephant__top-4--left{
+	transform: translate(35px, -93.5px)rotate(23deg);
+}
+.elephant__top-4--center{
+	width: 14px;
+	height:2px;
+	background-color:white;
+	transform: translate(35.5px, -112px);
+}
+.elephant__top-4--body{
+	width: 15px;
+	height:5px;
+	background-color:white;
+	transform: translate(35px, -97px);
+}
+.elephant__top-4--body-1{
+	width: 14px;
+	height:5px;
+	background-color:white;
+	transform: translate(35.5px, -83px);
+}
+.elephant__top-4--bottom{
+	width: 29.8px;
+	height:4px;
+	background-color:white;
+	transform: translate(28.1px, -78px);
+}
+.elephant__top-4--up{
+	width: 4px;
+	height:2px;
+	background-color:white;
+	transform: translate(40px, -150px);
+}
+.start__gree-elepfant{
+	width: 90px;
+	height: 90px;
+	transform: translate(0px, -2446px);
+	background-image: url(../img/eelefant.svg);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: green
+}
+.start__white-trasform:active .start__gree-elepfant{
+	background-color: red
+}
+.start__gree-white-king{
+	width: 90px;
+	height: 90px;
+	background-color: green;
+	transform: translate(630px, -3166px);
+}
+.start__white-trasform:active .start__gree-white-king{
+	background-color: red;
+	background-size: 120%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../img/white-king.png);
+}
+.training{
+	width: 180px;
+	height:180px;
+	background-color: green;
+	transform: translate(-800px, -950px);
+}
+.training__block{
+	width: 100%;
+	height:100%;
+	background-color: red;
+}
+.training--origin{
+	transform: translate(-120px, -1490px);
+}
+.training__block--origin{
+	transform: rotate(45deg)scale(0.5);
+	transform-origin: 109px 59px;
+}
+.training--perspective{
+	transform: translate(85px, -1670px);
+	perspective: 100px;
+	perspective-origin: 10px 10px;
+}
+.training__block--perspective{
+	transform: rotateX(20deg);
+}
+.training--transform-style{
+	transform: translate(320px, -1850px);
+	perspective: 300px;
+	transform-style: preserve-3d;
+}
+.training__block--style{
+	transform: rotateY(120deg);
+}
+.training--backface-visibility{
+	transform: translate(520px, -2030px);
+	perspective: 400px;
+}
+.training__block--backface-visibility{
+	transform: rotateY(150deg);
+	backface-visibility: hidden;
+}
+/* не совсем поняла ckface-visibility...без не работает.. */
+/* .padding{
+	width: 90px;
+	height: 90px;
+	background-color: green;
+	padding: 10px;
+}
+.padding__block{
+	width: 90px;
+	height: 90px;
+	background-color: rgb(152, 202, 152);
+} */
+
+/* не понятно как работает padding? */
